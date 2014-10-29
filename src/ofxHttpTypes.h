@@ -21,10 +21,12 @@ struct ofxHttpForm{
 	int method;
 	string action;
 	string name;
+	bool removeOnFail;
 
     ofxHttpForm(){
     	method = OFX_HTTP_GET;
     	expectBinaryResponse = false;
+    	removeOnFail = false;
     }
     ~ofxHttpForm(){
         clearFormFields();

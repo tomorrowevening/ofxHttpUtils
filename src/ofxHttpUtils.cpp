@@ -94,7 +94,7 @@ void ofxHttpUtils::threadedFunction(){
 				response = getUrl(url);
 			}
     		lock();
-			if(response.status!=-1) forms.pop();
+			if(response.status!=-1 || form.removeOnFail) forms.pop();
     	}
     	if(forms.empty()){
     	    ofLogVerbose("ofxHttpUtils") << "empty, waiting";
